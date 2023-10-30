@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript</title>
+        <style>
+            #myDiv{
+                background-color: coral;
+                border: 1px solid;
+                padding: 50px;
+                color: white;
+                font-size: 20px;
+            }
+        </style>
+        <body> 
+            <div id="myDiv">
+                <p>This div element has an onmousemove event handler that displays a random number every time you move your mouse inside this orange field.</p>
+                <p>Click the button to remove the div's event handler.</p>
+                <button onclick="removeHandler()" id="myBtn"> Remove </button>
+            </div>
+            <p id="demo"> </p>
+
+            <script>
+                const div = document.getElementById('myDiv')
+
+                function myFunction(){
+                    document.getElementById("demo").innerHTML = Math.random();
+                }
+
+                div.addEventListener("mousemove", myFunction);
+
+                function removeHandler(){
+                    div.removeEventListener("mousemove", myFunction)
+                }
+
+            </script>
+
+        </body>
+    </head>
+</html>
